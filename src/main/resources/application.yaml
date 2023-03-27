@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: user-center
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://121.41.96.10:3306/user_center?useSSL=false&serverTimezone=UTC
+    username: root
+    password: zhuzm0212.
+    hikari:
+      max-lifetime: 120000
+  # session失效时间
+  session:
+    timeout: 86400
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: is_delete # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
